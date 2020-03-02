@@ -71,13 +71,12 @@
                   </div>
                </div>
                <div class="col-md-12 pt-4 pb-4">
-                  <button type="button" class="btn btn-success check-out">Check Out</button>
+                  <button type="button" id="checkout-button" class="btn btn-success check-out">Check Out</button>
                </div>
             </div>
          </div>
       </div>
    </section>
-
 
 
 
@@ -148,17 +147,7 @@
 })
 
 
-function getSubTotal(){
-   const firstInputPrice = parseFloat(document.getElementById("first-input-price").innerText);
-   const secondInputPrice = parseFloat(document.getElementById("second-input-price").innerText);
 
-   const subtotal = firstInputPrice+secondInputPrice;
-   document.getElementById("subtotal-price").innerText = subtotal;
-   document.getElementById("tax-price").innerText = (subtotal*0.1).toFixed(2);
-
-   const total = parseFloat(document.getElementById("subtotal-price").innerText)+parseFloat(document.getElementById("tax-price").innerText);
-   document.getElementById("total-price").innerText = total;
-}
 
 
   // Second Increment Button 
@@ -217,6 +206,20 @@ function getSubTotal(){
 
   })
 
+
+
+  function getSubTotal(){
+   const firstInputPrice = parseFloat(document.getElementById("first-input-price").innerText);
+   const secondInputPrice = parseFloat(document.getElementById("second-input-price").innerText);
+
+   const subtotal = firstInputPrice+secondInputPrice;
+   document.getElementById("subtotal-price").innerText = subtotal;
+   document.getElementById("tax-price").innerText = (subtotal*0.1).toFixed(2);
+
+   const total = parseFloat(document.getElementById("subtotal-price").innerText)+parseFloat(document.getElementById("tax-price").innerText);
+   document.getElementById("total-price").innerText = total;
+}
+
   //first Input Quantity
 
   //const firstInputId = document.getElementById("first-input-id").value;
@@ -240,9 +243,16 @@ function getSubTotal(){
 
 
 
+      const checkoutButton = document.getElementById("checkout-button");
+      checkoutButton.addEventListener("click",function(){
+
+         alert("Thanks for your purchase");
 
 
+      })
 
+
+    
 
 
    </script>
